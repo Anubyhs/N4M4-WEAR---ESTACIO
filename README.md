@@ -85,6 +85,6 @@ images/                  # Imagens dos destinos
 
 Este projeto está sob a licença MIT.
 
-## 👨‍💻 Autor
+## 👨‍💻 FRANCINALDO
 
 Desenvolvido com ❤️ para explorar o mundo!
