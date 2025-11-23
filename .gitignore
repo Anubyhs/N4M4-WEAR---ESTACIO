@@ -16,7 +16,7 @@ build/
 pubspec.lock
 
 # Local Flutter SDK (don't include the SDK copy)
-flutter/
+
 
 # Android
 .gradle/
@@ -45,4 +45,7 @@ Pods/
 # Misc
 pubspec.lock
 .packages
+ 
+# Local backups
+.backup/
 
