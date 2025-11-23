@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 /// Função principal que inicializa o aplicativo Flutter
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
