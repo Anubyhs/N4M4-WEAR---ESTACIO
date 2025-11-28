@@ -1,90 +1,103 @@
-# FRANCINALDO PARA O MUNDO
+# N4M4 Wear OS - Estácio
 
-Aplicativo Flutter de agência de viagens desenvolvido para explorar destinos únicos ao redor do mundo.
+Aplicativo Wear OS desenvolvido para assistir funcionários com necessidades especiais, melhorando a eficiência, comunicação interna e solidificando a interação entre eles.
 
-## 📱 Sobre o App
+## ⌚ Sobre o App
 
-O **FRANCINALDO PARA O MUNDO** é um aplicativo de agência de viagens que oferece:
-- Pesquisa de destinos e pacotes
-- Visualização de destinos populares
-- Informações detalhadas sobre cada destino
-- Interface moderna e intuitiva
+O **N4M4 Wear OS** é um aplicativo para dispositivos Wear OS que oferece:
 
-## 🗺️ Destinos Disponíveis
+### Funcionalidades Implementadas:
+- ✅ **Detecção de dispositivos de áudio** (alto-falante integrado e Bluetooth)
+- ✅ **Detecção dinâmica de dispositivos de áudio** (callbacks para mudanças)
+- ✅ **Reprodução de áudio** (mensagens, notificações, alertas)
+- ✅ **Abertura de configurações do Bluetooth** para facilitar conexão
+- ✅ **Interface com imagem de João Pessoa como papel de parede**
 
-- **Buenos Aires, Argentina** - A capital da Argentina, conhecida como a "Paris da América do Sul"
-- **Amazônia** - Aldeia dos Povos Arrarra, experiência única com comunidades indígenas
-- **João Pessoa, Paraíba** - Capital da Paraíba, o ponto mais oriental das Américas
-- **C.E.U Xamânico** - Jacumã, espaço místico e espiritual único
+### Casos de Uso:
+- **Informações baseadas em áudio:** Leitura de mensagens de texto, notificações, lembretes e resposta a comandos de voz (especialmente útil para pessoas com deficiência visual)
+- **Treinamento e educação:** Fornece instruções, dicas e feedback durante o aprendizado ou prática de novas habilidades
+- **Alertas de segurança:** Usa áudio para fornecer alertas de segurança, incluindo notificações de emergência, alertas de tempestade, notícias importantes ou informações críticas
 
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Flutter SDK instalado
-- Dart SDK (incluído com Flutter)
+- Android Studio instalado
+- Android SDK configurado
+- Emulador Wear OS 2 configurado
 
-### Instalação
+### Instalação e Execução
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/my_app.git
-cd my_app
+git clone https://github.com/Anubyhs/N4M4-WEAR---ESTACIO.git
+cd N4M4-WEAR---ESTACIO
 ```
 
-2. Instale as dependências:
+2. Abra o projeto no Android Studio:
 ```bash
-flutter pub get
+cd android
+# Abra o projeto no Android Studio
 ```
 
-3. Execute o app:
+3. Inicie o emulador Wear OS 2:
 ```bash
-flutter run
+flutter emulators --launch Wear_2
+# Ou através do Android Studio: Tools > Device Manager > Wear_2 > Play
 ```
 
-### Executar em dispositivos específicos
-
-- **Web (Chrome):**
+4. Compile e instale o app:
 ```bash
-flutter run -d chrome
+./gradlew :wear:installDebug
 ```
 
-- **macOS:**
+5. Execute o app:
 ```bash
-flutter run -d macos
-```
-
-- **Android/iOS:**
-```bash
-flutter run
-```
-
-## 🧪 Testes
-
-Execute os testes do aplicativo:
-```bash
-flutter test
+adb shell am start -n com.example.wearosapp/.MainActivity
 ```
 
 ## 📦 Estrutura do Projeto
 
 ```
-lib/
-  └── main.dart          # Código principal do aplicativo
-test/
-  └── widget_test.dart   # Testes de widgets
-images/                  # Imagens dos destinos
+android/
+  └── wear/              # Módulo Wear OS
+      ├── build.gradle.kts
+      └── src/main/
+          ├── java/      # Código Java do app Wear
+          │   └── com/example/wearosapp/
+          │       ├── MainActivity.java
+          │       └── AudioHelper.java
+          └── res/        # Recursos (layouts, imagens, etc.)
+              ├── drawable/
+              ├── layout/
+              └── values/
 ```
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Flutter** - Framework de desenvolvimento multiplataforma
-- **Dart** - Linguagem de programação
-- **Material Design 3** - Design system moderno
+- **Android SDK** - Desenvolvimento Android nativo
+- **Java** - Linguagem de programação
+- **Wear OS** - Plataforma para dispositivos vestíveis
+- **AudioManager** - Gerenciamento de dispositivos de áudio
+- **MediaPlayer** - Reprodução de áudio
 
-## 📝 Licença
+## 📝 Funcionalidades Técnicas
 
-Este projeto está sob a licença MIT.
+### AudioHelper
+Classe utilitária para gerenciamento de dispositivos de áudio:
+- Detecção de alto-falante integrado
+- Detecção de fones Bluetooth conectados
+- Callbacks para mudanças dinâmicas de dispositivos
+- Abertura de configurações do Bluetooth
 
-## 👨‍💻 FRANCINALDO
+### MainActivity
+Activity principal do app com:
+- Interface com imagem de João Pessoa como papel de parede
+- Botões para explorar, reproduzir áudio e conectar Bluetooth
+- Status em tempo real dos dispositivos de áudio
+- Reprodução de áudio com MediaPlayer
 
-Desenvolvido com ❤️ para explorar o mundo!
+## 👨‍💻 Desenvolvido por
+
+**FRANCINALDO** - Estácio N4M4
+
+Desenvolvido com ❤️ para melhorar a acessibilidade e inclusão no ambiente de trabalho!
